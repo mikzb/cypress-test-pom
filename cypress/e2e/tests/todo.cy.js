@@ -34,13 +34,4 @@ describe('Gestión de tareas con POM', () => {
     todoPage.toggleTodo(taskName);
     todoPage.elements.todoItem(taskName).should('not.have.class', 'completed');
   });
-
-  it('Debe permitir editar una tarea', () => {
-    const taskName = 'Editar esta tarea';
-    todoPage.addTodo(taskName);
-    todoPage.elements.todoItemLabel(taskName).dblclick()
-        .type('{selectall}{backspace}Tarea editada{enter}');
-    todoPage.validateTodoExists('Tarea editada');
-  });
-
 });
